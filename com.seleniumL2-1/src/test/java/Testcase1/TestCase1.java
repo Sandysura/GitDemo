@@ -38,14 +38,14 @@ public class TestCase1 {
 	  js.executeScript("arguments[0].click()", e);
 	  js.executeScript("window.location='https://youtube.com'");
 	  
-	  /*
+	  
 	  driver.findElement(By.linkText("Blog")).click();
 	  String actualurl="https://demowebshop.tricentis.com/blog";
 	  String expectedurl=driver.getCurrentUrl();
 	  Assert.assertEquals(actualurl, expectedurl);
 	  WebElement blogarchive=driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div[1]/div[1]/div[1]/strong"));
 	 Assert.assertTrue( blogarchive.isDisplayed());
-	 */
+	 
   }
   
   @AfterTest
