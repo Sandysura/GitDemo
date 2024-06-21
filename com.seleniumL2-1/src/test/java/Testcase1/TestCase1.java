@@ -48,6 +48,26 @@ public class TestCase1 {
 	 
   }
   
+  @Test
+  public void Test3() {
+	  
+	  JavascriptExecutor js=(JavascriptExecutor) driver;
+	  WebElement el=driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[1]/div[2]/h3"));
+	  js.executeScript("arguments[0].scrollIntoView();", el);
+	  WebElement e=driver.findElement(By.linkText("Blog"));
+	  js.executeScript("arguments[0].click()", e);
+	  js.executeScript("window.location='https://youtube.com'");
+	  
+	  
+	  driver.findElement(By.linkText("Blog")).click();
+	  String actualurl="https://demowebshop.tricentis.com/blog";
+	  String expectedurl=driver.getCurrentUrl();
+	  Assert.assertEquals(actualurl, expectedurl);
+	  WebElement blogarchive=driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[4]/div[1]/div[1]/div[1]/strong"));
+	 Assert.assertTrue( blogarchive.isDisplayed());
+	 
+  }
+  
   @AfterTest
   public void TearDown()
   {
